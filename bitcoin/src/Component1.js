@@ -16,7 +16,7 @@ class Component1 extends React.Component {
         return (
             <div>
                 <h1>Component 1 </h1>
-                <h1>I have BitCoins : {myWallet}</h1>
+                <h1>Component 1 has BitCoins : {myWallet}</h1>
             </div>
         );
     }

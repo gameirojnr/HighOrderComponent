@@ -25,7 +25,7 @@ const myfirstHighOrderComponent = function MyHighOrderComponent (Component) {
         }
 
         render() {
-            return <Component {...this.state} {...this.props}/>
+            return <Component myWallet={this.state.myWallet}/>
         }
     }
 }

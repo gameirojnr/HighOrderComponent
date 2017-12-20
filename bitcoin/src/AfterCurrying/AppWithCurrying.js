@@ -17,8 +17,8 @@ class App2 extends Component {
                 <h1>Forever Plugin ❤</h1>
             </header>
             <hr/>
-            <Component1WithWrapper title='João Gameiro'/>
-            <Component2WithWrapper walletKey='#123456'/>
+            <Component1WithWrapper />
+            <Component2WithWrapper />
         </div>
     );
   }

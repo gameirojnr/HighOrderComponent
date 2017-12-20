@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Component1 extends React.Component {
-    render() {
-        const {myWallet} = this.props;
 
+    handleClick = () => {
+        this.props.handleTracker('Component1', {})
+    }
+
+    render() {
         return (
             <div>
-                <h1>Component 1</h1>
-                <h1>Component 1 has BitCoins : {myWallet}</h1>
+                <h1 onClick={this.handleClick}>Component 1</h1>
             </div>
         );
     }

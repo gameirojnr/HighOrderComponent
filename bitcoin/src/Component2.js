@@ -1,7 +1,7 @@
 import React from 'react';
 import API from './API';
 
-class Component1 extends React.Component {   
+class Component1 extends React.Component {    
     sendTracker = (id, content) => {
         API.sendTracker(id, content).then(
             (response) => {
@@ -14,13 +14,13 @@ class Component1 extends React.Component {
     }
 
     handleClick = () => {
-        this.sendTracker('Component1', {})
+        this.sendTracker('Component2', {})
     }
 
-    render() {
+    render() {       
         return (
             <div>
-                <h1 onClick={this.handleClick}>Component 1 </h1>
+                <h1 onClick={this.handleClick}>Component 2 </h1>
             </div>
         );
     }

@@ -1,22 +1,14 @@
-import React, { Component } from 'react';
-import API from '../DataSource';
+import React from 'react';
+import API from '../API';
+import { debounce, throttle} from 'lodash'
 
 const myfirstHighOrderComponent = function MyHighOrderComponent (Component) {
     return class extends React.Component {
-        constructor(props) {
-            super(props);
-    
-            this.state = {
-                myWallet: '',
-            };
-        }
 
-        componentDidMount() {
-            API.getBitcoins.then(
+        sendTracker = (id, content) => {
+            API.sendTracker(id, content).then(
                 (response) => {
-                    this.setState({
-                        myWallet: response.bitcoins,
-                    });
+                    console.log(response)
                 },
                 (error) => {
                     console.error(error);
@@ -24,8 +16,16 @@ const myfirstHighOrderComponent = function MyHighOrderComponent (Component) {
             );
         }
 
+        handleTracker = (id, content) =>  {
+           this.sendTracker(id, content);
+        }
+        
+        handleTrackterWithThrottle = debounce((id, content) => {
+            this.sendTracker(id, content);
+        }, 400)
+
         render() {
-            return <Component myWallet={this.state.myWallet}/>
+            return <Component handleTracker={this.handleTrackterWithThrottle}/>
         }
     }
 }

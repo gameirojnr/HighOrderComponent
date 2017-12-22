@@ -2,7 +2,7 @@ import React from 'react';
 import API from '../API';
 import { debounce, throttle} from 'lodash'
 
-const myfirstHighOrderComponent = function MyHighOrderComponent (Component) {
+const myfirstHighOrderComponent = (Component) =>{
     return class extends React.Component {
 
         sendTracker = (id, content) => {

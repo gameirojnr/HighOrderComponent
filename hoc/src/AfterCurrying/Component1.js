@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Component1 extends React.Component {
 
@@ -14,5 +15,13 @@ class Component1 extends React.Component {
         );
     }
 }
+
+Component1.defaultProps = {
+    handleTracker: () => {},
+};
+
+Component1.propTypes = {
+    handleTracker: PropTypes.func,
+};
 
 export default Component1;

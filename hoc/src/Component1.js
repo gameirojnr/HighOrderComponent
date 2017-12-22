@@ -2,19 +2,8 @@ import React from 'react';
 import API from './API';
 
 class Component1 extends React.Component {   
-    sendTracker = (id, content) => {
-        API.sendTracker(id, content).then(
-            (response) => {
-                console.log(response)
-            },
-            (error) => {
-                console.error(error);
-            }
-        );
-    }
-
     handleClick = () => {
-        this.sendTracker('Component1', {})
+        console.log('Component1')
     }
 
     render() {
